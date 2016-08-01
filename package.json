@@ -1,0 +1,44 @@
+{
+  "name": "quoridor",
+  "version": "0.0.0",
+  "description": "An abstract strategy game.",
+  "homepage": "https://github.com/sholladay/quoridor",
+  "main": "lib/index.html",
+  "author": {
+    "name": "Seth Holladay",
+    "url": "http://seth-holladay.com",
+    "email": "me@seth-holladay.com"
+  },
+  "scripts": {
+    "start": "nw",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sholladay/quoridor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sholladay/quoridor/issues",
+    "email": "me@seth-holladay.com"
+  },
+  "license": "MPL-2.0",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "nw": "0.15.4"
+  },
+  "devDependencies": {
+    "eslint-config-tidy": "0.1.0",
+    "xo": "0.16.0"
+  },
+  "keywords": [
+    "quoridor",
+    "abstract",
+    "strategy",
+    "game"
+  ],
+  "xo": {
+    "extend": "tidy"
+  }
+}
