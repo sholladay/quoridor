@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./Game');
+module.exports = require('./lib/game');

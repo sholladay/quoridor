@@ -27,11 +27,11 @@
     "index.js"
   ],
   "dependencies": {
-    "nw": "0.15.4"
+    "nw": "^0.18.3"
   },
   "devDependencies": {
-    "eslint-config-tidy": "0.1.0",
-    "xo": "0.16.0"
+    "eslint-config-tidy": "^0.4.0",
+    "xo": "^0.17.0"
   },
   "keywords": [
     "quoridor",
