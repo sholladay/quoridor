@@ -1,16 +1,17 @@
 {
     "name": "quoridor",
+    "productName": "Quoridor",
     "version": "0.0.0",
     "description": "An abstract strategy game.",
     "homepage": "https://github.com/sholladay/quoridor",
-    "main": "lib/index.html",
+    "main": "index.js",
     "author": {
         "name": "Seth Holladay",
         "url": "https://seth-holladay.com",
         "email": "me@seth-holladay.com"
     },
     "scripts": {
-        "start": "nw",
+        "start": "electron .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -27,9 +28,10 @@
         "index.js"
     ],
     "dependencies": {
-        "nw": "^0.18.3"
+        "electron-debug": "^2.0.0"
     },
     "devDependencies": {
+        "electron": "^4.0.0",
         "eslint-config-tidy": "^0.7.0",
         "xo": "^0.23.0"
     },
