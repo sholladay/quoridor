@@ -8,7 +8,14 @@
             Oh my goodness.
         </div>
         <script>
-            require('./main').start();
+            const Game = require('./lib/game');
+            const game = new Game({
+                players : [
+                    'Alex',
+                    'Dara'
+                ]
+            });
+            game.start();
         </script>
     </body>
 </html>
