@@ -10,7 +10,6 @@ if (!isFirstInstance) {
 // Adds hotkeys for triggering dev tools and reload.
 require('electron-debug')();
 
-// Prevent window being garbage collected.
 let mainWindow;
 
 const createMainWindow = () => {
@@ -29,7 +28,7 @@ const createMainWindow = () => {
     return win;
 };
 
-app.on('second-instance', function (event, argv, cwd) {
+app.on('second-instance', () => {
     if (mainWindow) {
         if (mainWindow.isMinimized()) {
             mainWindow.restore();
@@ -37,7 +36,7 @@ app.on('second-instance', function (event, argv, cwd) {
 
         mainWindow.show();
     }
-})
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -51,6 +50,6 @@ app.on('activate', () => {
     }
 });
 
-app.on('ready', () => {
+app.whenReady().then(() => {
     mainWindow = createMainWindow();
 });
