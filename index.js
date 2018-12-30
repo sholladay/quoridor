@@ -1,9 +1,10 @@
 'use strict';
 
 const { app, BrowserWindow } = require('electron');
+const prepareNext = require('electron-next');
+const { is } = require('electron-util');
 
-const isFirstInstance = app.requestSingleInstanceLock();
-if (!isFirstInstance) {
+if (!app.requestSingleInstanceLock()) {
     app.quit();
 }
 
@@ -18,7 +19,12 @@ const createMainWindow = () => {
         height : 400
     });
 
-    win.loadFile('index.html');
+    if (is.development) {
+        win.loadURL('http://localhost:8000/');
+    }
+    else {
+        win.loadFile('renderer/out/index.html');
+    }
 
     win.on('closed', () => {
         // Help the window be garbage collected.
@@ -50,6 +56,7 @@ app.on('activate', () => {
     }
 });
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+    await prepareNext('./renderer');
     mainWindow = createMainWindow();
 });
