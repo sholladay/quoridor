@@ -1,4 +1,4 @@
-# quoridor
+# quoridor [![Build status for Quoridor](https://travis-ci.com/sholladay/quoridor.svg?branch=master "Build Status")](https://travis-ci.com/sholladay/quoridor "Builds")
 
 > An abstract strategy game.
 
@@ -33,6 +33,6 @@ See our [contributing guidelines](https://github.com/sholladay/quoridor/blob/mas
 
 ## License
 
-[MPL-2.0](https://github.com/sholladay/quoridor/blob/master/LICENSE "The license for quoridor.") © [Seth Holladay](http://seth-holladay.com "Author of quoridor.")
+[MPL-2.0](https://github.com/sholladay/quoridor/blob/master/LICENSE "The license for quoridor.") © [Seth Holladay](https://seth-holladay.com "Author of quoridor.")
 
 Go make something, dang it.
