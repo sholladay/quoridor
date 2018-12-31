@@ -1,6 +1,21 @@
 import React from 'react';
 import { useFormState } from 'react-use-form-state';
-import { Button, Form, Input } from 'semantic-ui-react';
+import { Form, Header, Icon } from 'semantic-ui-react';
+
+const PlayerField = ({ checkbox, text, number, position }) => {
+    return (
+        <Form.Group>
+            <Form.Input
+                {...text(`${number}-name`)}
+                placeholder={`Player ${position}`}
+                required
+            />
+            <Form.Input
+                {...checkbox(`${number}-is-computer`)}
+            />
+        </Form.Group>
+    );
+};
 
 const PlayersForm = (props) => {
     const [formState, { text, checkbox }] = useFormState();
@@ -8,46 +23,25 @@ const PlayersForm = (props) => {
         evt.preventDefault();
         props.onSubmit(formState);
     };
-    // console.log('formStae:');
-    // console.log(formState);
     return (
         <>
             <Form onSubmit={handleSubmit}>
-                <h1>Who is playing?</h1>
-                <p>You may play with either two or four players.</p>
-                <Input
-                    {...text('1-name')}
-                    placeholder="Player one"
-                    required
-                />
-                <Input
-                    {...checkbox('1-is-computer')}
-                />
-                <Input
-                    {...text('2-name')}
-                    placeholder="Player two"
-                    required
-                />
-                <Input
-                    {...checkbox('2-is-computer')}
-                />
-                <Input
-                    {...text('3-name')}
-                    placeholder="Player three"
-                />
-                <Input
-                    {...text('4-name')}
-                    placeholder="Player four"
-                />
-                <Button>Start</Button>
+                <Header as='h2' icon>
+                    <Icon name='users' />
+                    Who is playing?
+                    <Header.Subheader content="You may play with either two or four players." />
+                </Header>
+                <PlayerField number="1" position="one" text={text} checkbox={checkbox} />
+                <PlayerField number="2" position="two" text={text} checkbox={checkbox} />
+                <PlayerField number="3" position="three" text={text} checkbox={checkbox} />
+                <PlayerField number="4" position="four" text={text} checkbox={checkbox} />
+                <Form.Button content="Start" />
             </Form>
             <style jsx>{`
-                h1 {
-                    font-size: 1rem;
-                }
                 form {
-                    display: block;
-                    width: 10rem;
+                    width: fit-content;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
             `}
             </style>
