@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useFormState } from 'react-use-form-state';
 import { Form, Header, Icon } from 'semantic-ui-react';
 
@@ -7,14 +8,20 @@ const PlayerField = ({ checkbox, text, number, position }) => {
         <Form.Group>
             <Form.Input
                 {...text(`${number}-name`)}
-                placeholder={`Player ${position}`}
                 required
+                placeholder={`Player ${position}`}
             />
             <Form.Input
                 {...checkbox(`${number}-is-computer`)}
             />
         </Form.Group>
     );
+};
+PlayerField.propTypes = {
+    checkbox : PropTypes.object.isRequired,
+    number   : PropTypes.number.isRequired,
+    position : PropTypes.string.isRequired,
+    text     : PropTypes.object.isRequired
 };
 
 const PlayersForm = (props) => {
@@ -26,8 +33,8 @@ const PlayersForm = (props) => {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-                <Header as='h2' icon>
-                    <Icon name='users' />
+                <Header icon as="h2">
+                    <Icon name="users" />
                     Who is playing?
                     <Header.Subheader content="You may play with either two or four players." />
                 </Header>
@@ -47,6 +54,9 @@ const PlayersForm = (props) => {
             </style>
         </>
     );
+};
+PlayersForm.propTypes = {
+    onSubmit : PropTypes.func.isRequired
 };
 
 export default PlayersForm;
