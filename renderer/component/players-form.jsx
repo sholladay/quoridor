@@ -8,7 +8,7 @@ const PlayerField = ({ checkbox, text, number, position }) => {
         <Form.Group>
             <Form.Input
                 {...text(`${number}-name`)}
-                required
+                required={number < 3}
                 placeholder={`Player ${position}`}
             />
             <Form.Input

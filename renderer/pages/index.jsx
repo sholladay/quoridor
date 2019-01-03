@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'semantic-ui-react';
-import Layout from '../layout/website.jsx';
+import { Header, Button } from 'semantic-ui-react';
+import Layout from '../layout/main.jsx';
 import Board from '../component/board.jsx';
 import PlayersForm from '../component/players-form.jsx';
+import { productName } from '../../package';
 
 const Game = (props) => {
     return (
@@ -29,8 +30,7 @@ const Index = () => {
     };
     return (
         <Layout>
-            <h1>Quoridor</h1>
-            <p>{isInGame ? 'Running game...' : 'An abstract strategy game'}</p>
+            <Header as="h1" textAlign="center" content={productName} />
             {isInGame ?
                 <Game onAbort={handleAbort} /> :
                 <PlayersForm onSubmit={handleStart} />

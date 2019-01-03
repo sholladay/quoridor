@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-const Layout = (props) => {
+const MainLayout = (props) => {
     return (
         <>
             <Head>
@@ -22,8 +22,8 @@ const Layout = (props) => {
         </>
     );
 };
-Layout.propTypes = {
+MainLayout.propTypes = {
     children : PropTypes.arrayOf(PropTypes.element).isRequired
 };
 
-export default Layout;
+export default MainLayout;

@@ -32,12 +32,12 @@ const Board = () => {
                 #board {
                     display: grid;
                     grid-template-columns: repeat(8, 10% 1fr) 10%;
-                    grid-template-rows: repeat(8, 10% 1fr) 10%;
-                    width: 50vw;
+                    grid-auto-rows: 10% 1fr;
+                    width: 60vmin;
                     min-width:400px;
-                    height: 50vw;
+                    height: 60vmin;
                     min-height:400px;
-                    border: 5px solid black;
+                    border: 0.25rem solid black;
                     margin-left: auto;
                     margin-right: auto;
                 }
