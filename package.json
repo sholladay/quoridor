@@ -31,11 +31,11 @@
     "dependencies": {
         "electron-debug": "^2.0.0",
         "electron-next": "^3.1.5",
-        "electron-util": "^0.10.2",
+        "electron-util": "^0.11.0",
         "prop-types": "^15.6.2",
         "react": "16.7.0-alpha.2",
         "react-dom": "16.7.0-alpha.2",
-        "react-use-form-state": "^0.3.0",
+        "react-use-form-state": "^0.4.0",
         "semantic-ui-react": "^0.84.0"
     },
     "devDependencies": {
@@ -45,7 +45,7 @@
         "eslint-config-tidy-react": "^0.3.1",
         "eslint-plugin-react": "^7.12.0",
         "next": "^7.0.2",
-        "xo": "^0.23.0"
+        "xo": "^0.24.0"
     },
     "keywords": [
         "quoridor",
