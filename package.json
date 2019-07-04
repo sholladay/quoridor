@@ -1,72 +1,76 @@
 {
-    "name": "quoridor",
-    "productName": "Quoridor",
-    "version": "0.0.0",
-    "description": "An abstract strategy game.",
-    "homepage": "https://github.com/sholladay/quoridor",
-    "main": "index.js",
-    "author": {
-        "name": "Seth Holladay",
-        "url": "https://seth-holladay.com",
-        "email": "me@seth-holladay.com"
-    },
-    "scripts": {
-        "build": "next build renderer && next export renderer",
-        "start": "electron .",
-        "test": "xo"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:sholladay/quoridor.git"
-    },
-    "bugs": {
-        "url": "https://github.com/sholladay/quoridor/issues",
-        "email": "me@seth-holladay.com"
-    },
-    "license": "MPL-2.0",
-    "files": [
-        "lib",
-        "index.js"
+  "name": "quoridor",
+  "productName": "Quoridor",
+  "version": "0.0.0",
+  "description": "An abstract strategy game.",
+  "homepage": "https://github.com/sholladay/quoridor",
+  "main": "index.js",
+  "author": {
+    "name": "Seth Holladay",
+    "url": "https://seth-holladay.com",
+    "email": "me@seth-holladay.com"
+  },
+  "scripts": {
+    "build": "next build renderer && next export renderer",
+    "start": "electron .",
+    "test": "xo",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sholladay/quoridor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sholladay/quoridor/issues",
+    "email": "me@seth-holladay.com"
+  },
+  "license": "MPL-2.0",
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "electron-debug": "^2.0.0",
+    "electron-next": "^3.1.5",
+    "electron-util": "^0.11.0",
+    "prop-types": "^15.6.2",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
+    "react-use-form-state": "^0.4.0",
+    "semantic-ui-react": "^0.84.0",
+    "snyk": "^1.189.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "electron": "^4.0.0",
+    "eslint-config-tidy": "^0.7.0",
+    "eslint-config-tidy-react": "^0.3.1",
+    "eslint-plugin-react": "^7.12.0",
+    "next": "^7.0.2",
+    "xo": "^0.24.0"
+  },
+  "keywords": [
+    "quoridor",
+    "abstract",
+    "strategy",
+    "game"
+  ],
+  "xo": {
+    "parser": "babel-eslint",
+    "extend": [
+      "tidy",
+      "tidy-react"
     ],
-    "dependencies": {
-        "electron-debug": "^2.0.0",
-        "electron-next": "^3.1.5",
-        "electron-util": "^0.11.0",
-        "prop-types": "^15.6.2",
-        "react": "16.7.0-alpha.2",
-        "react-dom": "16.7.0-alpha.2",
-        "react-use-form-state": "^0.4.0",
-        "semantic-ui-react": "^0.84.0"
-    },
-    "devDependencies": {
-        "babel-eslint": "^10.0.1",
-        "electron": "^4.0.0",
-        "eslint-config-tidy": "^0.7.0",
-        "eslint-config-tidy-react": "^0.3.1",
-        "eslint-plugin-react": "^7.12.0",
-        "next": "^7.0.2",
-        "xo": "^0.24.0"
-    },
-    "keywords": [
-        "quoridor",
-        "abstract",
-        "strategy",
-        "game"
+    "env": [
+      "node",
+      "browser"
     ],
-    "xo": {
-        "parser": "babel-eslint",
-        "extend": [
-            "tidy",
-            "tidy-react"
-        ],
-        "env": [
-            "node",
-            "browser"
-        ],
-        "settings": {
-            "react": {
-                "version": "16.7.0-alpha.2"
-            }
-        }
+    "settings": {
+      "react": {
+        "version": "16.7.0-alpha.2"
+      }
     }
+  },
+  "snyk": true
 }
